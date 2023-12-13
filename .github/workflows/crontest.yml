@@ -2,7 +2,7 @@ name: Print Basic Message
 
 on:
   schedule:
-    - cron: '0 19 * * 2'
+    - cron: '*/10 * * * 2'
 jobs:
   print-message:
     runs-on: ubuntu-latest
