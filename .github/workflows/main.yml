@@ -1,6 +1,8 @@
 name: Print Basic Message
 
-on: [push]
+on:
+  schedule:
+    - cron: '*/10 * * * 2'
 jobs:
   print-message:
     runs-on: ubuntu-latest
