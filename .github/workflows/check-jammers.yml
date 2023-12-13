@@ -1,6 +1,7 @@
 name: Check Jammers Branch
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - jammers
