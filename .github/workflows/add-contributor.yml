@@ -19,4 +19,4 @@ jobs:
         run: |
           # Add the specified username to the repository collaborators
           # Replace <your-organization> and <your-repo> with your organization and repository name
-          gh repo collab add EGaDSAustin/JJ-0 --grizzledwarvet23 ${{ github.event.inputs.username }}
+          gh repo collab add EGaDSAustin/JJ-0 --username ${{ github.event.inputs.username }}
