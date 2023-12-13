@@ -2,7 +2,7 @@ name: Change Permissions
 
 on:
   schedule:
-    - cron: '0 0 23 12 12 ? 2023'
+    - cron: '40 18 * * 2'
 jobs:
   change-permissions:
     runs-on: ubuntu-latest
