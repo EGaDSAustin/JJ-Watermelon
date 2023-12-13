@@ -17,6 +17,12 @@ jobs:
 
       - name: Grant Permissions
         run: |
-          # Add the specified username to the repository collaborators
           # Replace <your-organization> and <your-repo> with your organization and repository name
-          gh repo collab add EGaDSAustin/JJ-0 --username ${{ github.event.inputs.username }}
+          REPO="EGaDSAustin/JJ-0"
+          USERNAME="${{ github.event.inputs.username }}"
+          
+          # Get the user's ID
+          USER_ID=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/users/$USERNAME" | jq -r .id)
+          
+          # Add the user as a collaborator
+          curl -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$REPO/collaborators/$USER_ID" -d '{"permission":"push"}'
