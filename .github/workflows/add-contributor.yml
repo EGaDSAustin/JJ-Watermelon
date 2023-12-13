@@ -1,12 +1,12 @@
-name: Grant Permissions
+name: Remove Existing & Add New Collaborators
 
 on:
-  schedule:
-    - cron: '0 16 * * *'
+  # schedule:
+  #   - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       usernames:
-        description: 'Usernames to grant permissions (comma-separated)'
+        description: 'New collaborators (comma-separated)'
         required: true
 
 jobs:
@@ -16,6 +16,27 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Remove existing collaborators
+        if: github.actor == 'texas-egads'
+        run: |
+          REPO_OWNER="EGaDSAustin"
+          REPO_NAME="JJ-0"
+          GH_TOKEN="${{ secrets.GH_TOKEN }}"
+
+          # Get the current collaborators
+          CURRENT_COLLABORATORS=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators" | jq -r '.[].login')
+
+          # Remove each current collaborator
+          for COLLABORATOR in $CURRENT_COLLABORATORS; do
+            curl -X DELETE -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$COLLABORATOR"
+            echo "Removed collaborator: $COLLABORATOR"
+          done
+
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Add collaborators
         if: github.actor == 'texas-egads'
