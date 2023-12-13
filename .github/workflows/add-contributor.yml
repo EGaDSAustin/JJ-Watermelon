@@ -32,5 +32,6 @@ jobs:
             -d "{\"permission\":\"write\"}"
 
         env:
-          USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          USERNAME: "grizzledwarvet23"
+          # ${{ secrets.GITHUB_USERNAME }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
