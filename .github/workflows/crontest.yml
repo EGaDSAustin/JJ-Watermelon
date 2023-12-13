@@ -1,0 +1,12 @@
+name: Print Basic Message
+
+on:
+  schedule:
+    - cron: '0 19 * * 2'
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Basic Message
+      run: echo "Hello, this is a scheduled job!"
