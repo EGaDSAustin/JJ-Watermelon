@@ -3,8 +3,8 @@ name: Grant Permissions
 on:
   workflow_dispatch:
     inputs:
-      username:
-        description: 'Username to grant permissions'
+      usernames:
+        description: 'Usernames to grant permissions (comma-separated)'
         required: true
 
 jobs:
@@ -15,24 +15,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Add collaborator
+      - name: Add collaborators
         if: github.actor == 'texas-egads'
         run: |
           REPO_OWNER="EGaDSAustin"
           REPO_NAME="JJ-0"
-          USERNAME="${{github.event.inputs.username}}"
           GH_TOKEN="${{ secrets.GH_TOKEN }}"
+          
+          # Split comma-separated list of usernames into an array
+          IFS=',' read -ra USERNAMES <<< "${{ github.event.inputs.usernames }}"
 
-          # Get the user's ID
-          USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/users/$USERNAME" | jq -r .id)
+          for USERNAME in "${USERNAMES[@]}"; do
+            # Get the user's ID
+            USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/users/$USERNAME" | jq -r .id)
 
-          # Add the user as a collaborator
-          curl -X PUT -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
-            -d "{\"permission\":\"write\"}"
+            # Add the user as a collaborator
+            curl -X PUT -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
+              -d "{\"permission\":\"write\"}"
+
+            # Optionally, you can add some logging for each user
+            echo "Added collaborator: $USERNAME"
+          done
 
         env:
-          # USERNAME: "grizzledwarvet23"
-          # ${{ secrets.GITHUB_USERNAME }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
