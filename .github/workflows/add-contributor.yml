@@ -8,26 +8,29 @@ on:
         required: true
 
 jobs:
-  grant-permissions:
+  add-collaborator:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Grant Permissions
+      - name: Add collaborator
         run: |
-          set -x  # Enable debugging
-          
-          # Replace <your-organization> and <your-repo> with your organization and repository name
-          REPO="EGaDSAustin/JJ-0"
-          USERNAME="${{ github.event.inputs.username }}"
-          
+          REPO_OWNER="texas-egads"
+          REPO_NAME="JJ-0"
+          USERNAME="grizzledwarvet23"
+          GH_TOKEN="${{ secrets.GH_TOKEN }}"
+
           # Get the user's ID
-          USER_ID=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/users/$USERNAME" | jq -r .id)
-          
-          # Add the user as a collaborator and capture the response
-          RESPONSE=$(curl -i -X PUT -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/$REPO/collaborators/$USER_ID" -d '{"permission":"push"}')
-          
-          # Output the response for debugging
-          echo "$RESPONSE"
+          USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/users/$USERNAME" | jq -r .id)
+
+          # Add the user as a collaborator
+          curl -X PUT -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
+            -d "{\"permission\":\"write\"}"
+
+        env:
+          USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
