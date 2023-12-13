@@ -5,8 +5,11 @@ on:
     - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
-      usernames:
+      add-usernames:
         description: 'Usernames to grant permissions (comma-separated)'
+        required: true
+      remove-usernames:
+        description: 'Usernames to remove permissions (comma-separated)'
         required: true
 
 jobs:
@@ -24,43 +27,42 @@ jobs:
           REPO_NAME="JJ-0"
           GH_TOKEN="${{ secrets.GH_TOKEN }}"
 
-          # Get the current collaborators
-          CURRENT_COLLABORATORS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators" | jq -r '.[].login')
+          # Split comma-separated list of usernames to remove into an array
+          IFS=',' read -ra REMOVE_USERNAMES <<< "${{ github.event.inputs.remove-usernames }}"
 
-          # Remove each current collaborator
-          for COLLABORATOR in $CURRENT_COLLABORATORS; do
+          for USERNAME in "${REMOVE_USERNAMES[@]}"; do
+            # Remove the user as a collaborator
             curl -X DELETE -H "Authorization: token $GH_TOKEN" \
-              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$COLLABORATOR"
-            echo "Removed collaborator: $COLLABORATOR"
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME"
+            echo "Removed collaborator: $USERNAME"
           done
 
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      # - name: Add collaborators
-      #   if: github.actor == 'texas-egads'
-      #   run: |
-      #     REPO_OWNER="EGaDSAustin"
-      #     REPO_NAME="JJ-0"
-      #     GH_TOKEN="${{ secrets.GH_TOKEN }}"
+      - name: Add collaborators
+        if: github.actor == 'texas-egads'
+        run: |
+          REPO_OWNER="EGaDSAustin"
+          REPO_NAME="JJ-0"
+          GH_TOKEN="${{ secrets.GH_TOKEN }}"
           
-      #     # Split comma-separated list of usernames into an array
-      #     IFS=',' read -ra USERNAMES <<< "${{ github.event.inputs.usernames }}"
+          # Split comma-separated list of usernames to add into an array
+          IFS=',' read -ra ADD_USERNAMES <<< "${{ github.event.inputs.add-usernames }}"
 
-      #     for USERNAME in "${USERNAMES[@]}"; do
-      #       # Get the user's ID
-      #       USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
-      #         "https://api.github.com/users/$USERNAME" | jq -r .id)
+          for USERNAME in "${ADD_USERNAMES[@]}"; do
+            # Get the user's ID
+            USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/users/$USERNAME" | jq -r .id)
 
-      #       # Add the user as a collaborator
-      #       curl -X PUT -H "Authorization: token $GH_TOKEN" \
-      #         "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
-      #         -d "{\"permission\":\"write\"}"
+            # Add the user as a collaborator
+            curl -X PUT -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
+              -d "{\"permission\":\"write\"}"
 
-      #       # Optionally, you can add some logging for each user
-      #       echo "Added collaborator: $USERNAME"
-      #     done
+            # Optionally, you can add some logging for each user
+            echo "Added collaborator: $USERNAME"
+          done
 
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
