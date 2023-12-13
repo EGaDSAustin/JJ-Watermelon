@@ -20,7 +20,7 @@ jobs:
         run: |
           REPO_OWNER="EGaDSAustin"
           REPO_NAME="JJ-0"
-          USERNAME="grizzledwarvet23"
+          USERNAME="${{github.event.inputs.username}}"
           GH_TOKEN="${{ secrets.GH_TOKEN }}"
 
           # Get the user's ID
@@ -33,6 +33,6 @@ jobs:
             -d "{\"permission\":\"write\"}"
 
         env:
-          USERNAME: "grizzledwarvet23"
+          # USERNAME: "grizzledwarvet23"
           # ${{ secrets.GITHUB_USERNAME }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
