@@ -17,19 +17,20 @@ jobs:
 
       - name: Add collaborator
         run: |
-          REPO_OWNER="EGaDSAustin"
-          REPO_NAME="JJ-0"
-          USERNAME="grizzledwarvet23"
-          GH_TOKEN="${{ secrets.GH_TOKEN }}"
-
-          # Get the user's ID
-          USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/users/$USERNAME" | jq -r .id)
-
-          # Add the user as a collaborator
-          curl -X PUT -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
-            -d "{\"permission\":\"write\"}"
+          if [[ "${{ github.actor }}" == "texas-egads" ]]; then
+            REPO_OWNER="EGaDSAustin"
+            REPO_NAME="JJ-0"
+            USERNAME="grizzledwarvet23"
+            GH_TOKEN="${{ secrets.GH_TOKEN }}"
+  
+            # Get the user's ID
+            USER_ID=$(curl -s -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/users/$USERNAME" | jq -r .id)
+  
+            # Add the user as a collaborator
+            curl -X PUT -H "Authorization: token $GH_TOKEN" \
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/collaborators/$USERNAME" \
+              -d "{\"permission\":\"write\"}"
 
         env:
           USERNAME: "grizzledwarvet23"
