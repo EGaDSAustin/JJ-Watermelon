@@ -1,0 +1,22 @@
+name: Grant Permissions
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Username to grant permissions'
+        required: true
+
+jobs:
+  grant-permissions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Grant Permissions
+        run: |
+          # Add the specified username to the repository collaborators
+          # Replace <your-organization> and <your-repo> with your organization and repository name
+          gh repo collab add EGaDSAustin/JJ-0 --grizzledwarvet23 ${{ github.event.inputs.username }}
