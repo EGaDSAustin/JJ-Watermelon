@@ -2,7 +2,7 @@ name: Grant Permissions
 
 on:
   schedule:
-    - cron: '50 21 * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       usernames:
