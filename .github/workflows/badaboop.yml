@@ -1,0 +1,12 @@
+name: Do Nothing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  do-nothing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Do Nothing
+        run: echo "This job does nothing."
