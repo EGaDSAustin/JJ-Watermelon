@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Add collaborator
+        if: github.actor == 'texas-egads'
         run: |
           REPO_OWNER="EGaDSAustin"
           REPO_NAME="JJ-0"
