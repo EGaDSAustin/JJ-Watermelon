@@ -3,6 +3,7 @@ name: Print Basic Message
 on:
   schedule:
     - cron: '*/10 * * * 2'
+  workflow_dispatch:
 jobs:
   print-message:
     runs-on: ubuntu-latest
