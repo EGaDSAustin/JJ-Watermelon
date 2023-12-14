@@ -2,13 +2,13 @@ name: Grant Permissions
 
 on:
   workflow_dispatch:
-    inputs:
-      add-usernames:
-        description: 'Usernames to grant permissions (comma-separated)'
-        required: true
-      remove-usernames:
-        description: 'Usernames to remove permissions (comma-separated)'
-        required: true
+    # inputs:
+    #   add-usernames:
+    #     description: 'Usernames to grant permissions (comma-separated)'
+    #     required: true
+    #   remove-usernames:
+    #     description: 'Usernames to remove permissions (comma-separated)'
+    #     required: true
 
 jobs:
   add-collaborator:
@@ -26,7 +26,7 @@ jobs:
           GH_TOKEN="${{ secrets.GH_TOKEN }}"
 
           # Split comma-separated list of usernames to remove into an array
-          IFS=',' read -ra REMOVE_USERNAMES <<< "${{ github.event.inputs.remove-usernames }}"
+          IFS=',' read -ra REMOVE_USERNAMES <<< "${{ secrets.REMOVE_NAMES }}"
 
           for USERNAME in "${REMOVE_USERNAMES[@]}"; do
             # Remove the user as a collaborator
@@ -46,7 +46,7 @@ jobs:
           GH_TOKEN="${{ secrets.GH_TOKEN }}"
           
           # Split comma-separated list of usernames to add into an array
-          IFS=',' read -ra ADD_USERNAMES <<< "${{ github.event.inputs.add-usernames }}"
+          IFS=',' read -ra ADD_USERNAMES <<< "${{ secrets.ADD_NAMES }}"
 
           for USERNAME in "${ADD_USERNAMES[@]}"; do
             # Get the user's ID
