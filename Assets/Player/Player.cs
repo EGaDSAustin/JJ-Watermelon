@@ -6,18 +6,19 @@ using Cinemachine;
 
 public class Player : MonoBehaviour
 {
-    public CameraController cameraController;
+    public Transform ModelTransform;
+    public Transform NormalTransform;
 
-    public float moveSpeed;
-    public float jumpForce;
-    public Vector2 moveVector;
-    public bool jumping;
-
+    public float MoveSpeed;
+    public float JumpForce;
+    
     private Rigidbody rb;
 
     private bool canJump;
     private bool backwards;
     private Vector3 moveDirection;
+    private Vector2 moveVector;
+    private bool jumping;
 
     // Start is called before the first frame update
     void Start()
@@ -44,35 +45,31 @@ public class Player : MonoBehaviour
 
         // (3.6f + (3.5f - 1.0f)) = Collider center + (Collider height / 2 - Collider radius)
         // Penguin model is scaled down by 1/7
-        RaycastHit hit; 
-        if (Physics.CapsuleCast(transform.position + transform.up * (3.8f + (3.5f - 1.0f)) / 7.0f, transform.position + transform.up * (3.8f - (3.5f - 1.0f)) / 7.0f, 0.9f / 7.0f, Vector3.down, out hit, 0.2f))
+        // Feet cast || belly cast
+        if (Physics.CapsuleCast(ModelTransform.position + ModelTransform.up * (3.5f + (3.5f - 1.0f)) / 7.0f, ModelTransform.position + ModelTransform.up * (3.5f - (3.5f - 1.0f)) / 7.0f, 0.8f / 7.0f, -ModelTransform.up, out RaycastHit hit, 0.2f) ||
+            Physics.CapsuleCast(ModelTransform.position + ModelTransform.up * (3.5f + (3.5f - 1.0f)) / 7.0f, ModelTransform.position + ModelTransform.up * (3.5f - (3.5f - 1.0f)) / 7.0f, 0.8f / 7.0f, ModelTransform.forward, out hit, 0.2f))
         {
             canJump = true;
-            if (Vector3.Angle(Vector3.up, hit.normal) < 0.01f)
+            if (Vector3.Angle(Vector3.up, hit.normal) < 1.0f) // On flat ground
             {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(moveDirection, Vector3.up), 15.0f);
+                ModelTransform.rotation = Quaternion.RotateTowards(ModelTransform.rotation, Quaternion.LookRotation(moveDirection, Vector3.up), 15.0f);
+                NormalTransform.up = Vector3.up;
             }
-            else
+            else // On slope
             {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(-hit.normal, moveDirection), 2.0f);
+                ModelTransform.rotation = Quaternion.RotateTowards(ModelTransform.rotation, Quaternion.LookRotation(-hit.normal, moveDirection), 2.0f);
+                NormalTransform.up = hit.normal;
             }
         }
         else
         {
             canJump = false;
-
         }
 
-        cameraController.Offset = Vector3.RotateTowards(
-            cameraController.Offset,
-            Quaternion.FromToRotation(Vector3.up, hit.normal) * cameraController.InitialOffset,
-            0.02f,
-            0.0f);
-
-        rb.AddForce(Quaternion.FromToRotation(Vector3.forward, moveDirection) * new Vector3(moveVector.x, 0.0f, moveVector.y) * moveSpeed);
+        rb.AddForce(Quaternion.FromToRotation(Vector3.forward, moveDirection) * new Vector3(moveVector.x, 0.0f, moveVector.y) * MoveSpeed);
         if (canJump && jumping)
         {
-            rb.AddForce(new Vector3(0.0f, jumpForce, 0.0f), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0.0f, JumpForce, 0.0f), ForceMode.Impulse);
         }
 
         jumping = false;
