@@ -6,6 +6,8 @@ using Cinemachine;
 
 public class Player : MonoBehaviour
 {
+    public CameraController cameraController;
+
     public float moveSpeed;
     public float jumpForce;
     public Vector2 moveVector;
@@ -15,7 +17,7 @@ public class Player : MonoBehaviour
 
     private bool canJump;
     private bool backwards;
-    Vector3 moveDirection;
+    private Vector3 moveDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -32,15 +34,40 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        canJump = Physics.Raycast(transform.position, Vector2.down, 0.501f);
-
         Vector3 horizontalCameraOffset = transform.position - Camera.main.transform.position;
         horizontalCameraOffset.y = 0.0f;
-        
+
         if (!backwards)
         {
             moveDirection = horizontalCameraOffset.normalized;
         }
+
+        // (3.6f + (3.5f - 1.0f)) = Collider center + (Collider height / 2 - Collider radius)
+        // Penguin model is scaled down by 1/7
+        RaycastHit hit; 
+        if (Physics.CapsuleCast(transform.position + transform.up * (3.8f + (3.5f - 1.0f)) / 7.0f, transform.position + transform.up * (3.8f - (3.5f - 1.0f)) / 7.0f, 0.9f / 7.0f, Vector3.down, out hit, 0.2f))
+        {
+            canJump = true;
+            if (Vector3.Angle(Vector3.up, hit.normal) < 0.01f)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(moveDirection, Vector3.up), 15.0f);
+            }
+            else
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(-hit.normal, moveDirection), 2.0f);
+            }
+        }
+        else
+        {
+            canJump = false;
+
+        }
+
+        cameraController.Offset = Vector3.RotateTowards(
+            cameraController.Offset,
+            Quaternion.FromToRotation(Vector3.up, hit.normal) * cameraController.InitialOffset,
+            0.02f,
+            0.0f);
 
         rb.AddForce(Quaternion.FromToRotation(Vector3.forward, moveDirection) * new Vector3(moveVector.x, 0.0f, moveVector.y) * moveSpeed);
         if (canJump && jumping)
