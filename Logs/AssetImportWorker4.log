@@ -1,0 +1,322 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.15f1 (b58023a2b463) revision 11894819'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 16310 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.15f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/Teddy/Documents/GitHub/JJ-Watermelon
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+65048
+Successfully changed project path to: C:/Users/Teddy/Documents/GitHub/JJ-Watermelon
+C:/Users/Teddy/Documents/GitHub/JJ-Watermelon
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [27000] Host "[IP] 10.0.0.70 [Port] 0 [Flags] 2 [Guid] 475114415 [EditorId] 475114415 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-M5A9GL9) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [27000] Host "[IP] 10.0.0.70 [Port] 0 [Flags] 2 [Guid] 475114415 [EditorId] 475114415 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-M5A9GL9) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 17.83 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.15f1 (b58023a2b463)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Teddy/Documents/GitHub/JJ-Watermelon/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Vendor:   NVIDIA
+    VRAM:     8031 MB
+    Driver:   31.0.15.3623
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.15f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56080
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010557 seconds.
+- Loaded All Assemblies, in  0.362 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.262 seconds
+Domain Reload Profiling: 620ms
+	BeginReloadAssembly (113ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (134ms)
+		LoadAssemblies (110ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (132ms)
+			TypeCache.Refresh (130ms)
+				TypeCache.ScanAssembly (117ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (262ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (206ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (139ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.724 seconds
+Refreshing native plugins compatible for Editor in 6.09 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.609 seconds
+Domain Reload Profiling: 1323ms
+	BeginReloadAssembly (148ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (466ms)
+		LoadAssemblies (382ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (174ms)
+			TypeCache.Refresh (149ms)
+				TypeCache.ScanAssembly (132ms)
+			ScanForSourceGeneratedMonoScriptInfo (20ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (609ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (456ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (77ms)
+			ProcessInitializeOnLoadAttributes (318ms)
+			ProcessInitializeOnLoadMethodAttributes (39ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 8.76 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4030 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (61.0 KB). Loaded Objects now: 4493.
+Memory consumption went from 148.3 MB to 148.2 MB.
+Total: 4.678100 ms (FindLiveObjects: 0.504500 ms CreateObjectMapping: 0.142700 ms MarkObjects: 3.841500 ms  DeleteObjects: 0.188100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 43b350a4d6e6d1791af0b5038c4bea17 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 117091.604278 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Snowmans
+  artifactKey: Guid(469c54446f9ebb84981489afc619b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Snowmans using Guid(469c54446f9ebb84981489afc619b829) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '907e605bc4f039d693d563b7d8cadeff') in 0.002352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.234547 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Caramel_Cane.prefab
+  artifactKey: Guid(07130242b951ca04fb7f023a7924ec7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Caramel_Cane.prefab using Guid(07130242b951ca04fb7f023a7924ec7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be604700863248b5482718c5aaf5b05c') in 0.115024 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Snowman_Hand_3.prefab
+  artifactKey: Guid(46eac2874d7559a4b87f72fb1f0d3e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Snowman_Hand_3.prefab using Guid(46eac2874d7559a4b87f72fb1f0d3e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d34e763e739ec1567fa357e89fb229') in 0.017083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Snowman_Hat_3.prefab
+  artifactKey: Guid(1a9520e7d5db8024987d5ce1ddba15a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Snowmans/Snowman_Hat_3.prefab using Guid(1a9520e7d5db8024987d5ce1ddba15a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb5a09fa16f6d06fa409fc41991b97c') in 0.023670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 4.251470 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Gifts
+  artifactKey: Guid(485f3bd20fed0b3418841b0184c1e1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Gifts using Guid(485f3bd20fed0b3418841b0184c1e1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49a1fba1374c9bfe8dd9cece73739f1b') in 0.000504 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.064281 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Gifts/Big_Gift_1.prefab
+  artifactKey: Guid(2588b25e4e546fa429c471e9af7b9d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Gifts/Big_Gift_1.prefab using Guid(2588b25e4e546fa429c471e9af7b9d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a7348e74fda76a426cb3808511b57f6') in 0.015005 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Gifts/Small_Gift_5.prefab
+  artifactKey: Guid(b13e5979a92f25747a6bf2fd24bff43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Gifts/Small_Gift_5.prefab using Guid(b13e5979a92f25747a6bf2fd24bff43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39b1f976a2d3e997b3b26184880c4415') in 0.013724 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 6.588867 seconds.
+  path: Assets/Free Voxel Christmas Pack/Scenes
+  artifactKey: Guid(f9664272ac38b124aad7d3593a9576d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Scenes using Guid(f9664272ac38b124aad7d3593a9576d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9986bfb2ec0a8b582b2b8e1a9db57ac0') in 0.000596 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.990373 seconds.
+  path: Assets/Free Voxel Christmas Pack/Scenes/Demo_Scene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Scenes/Demo_Scene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b93341564f2f161d263b8835828868') in 0.000489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 28.276531 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(fba513c4987b0d6488cfc477cd0d178e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(fba513c4987b0d6488cfc477cd0d178e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '644a75ff65c25dacd7b6c28baa5d54e9') in 0.000480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 137.842979 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Christmas_Trees
+  artifactKey: Guid(02fd20ed32a4e1a4e9fddaea7192ce05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Christmas_Trees using Guid(02fd20ed32a4e1a4e9fddaea7192ce05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fda5129af6bea9bb3595cee591271d6') in 0.000457 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.057315 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Christmas_Trees/Christmas tree_1.prefab
+  artifactKey: Guid(2fa5038357e0ef04d9d96a0a86bc26b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Christmas_Trees/Christmas tree_1.prefab using Guid(2fa5038357e0ef04d9d96a0a86bc26b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d5873aa230284df71352f3dd75951e3') in 0.035029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 6.362595 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Environment
+  artifactKey: Guid(298fcca20b2a35d4494391452e1f1676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Environment using Guid(298fcca20b2a35d4494391452e1f1676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b765839205263508cbc6fb2b20f3608') in 0.000490 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.054481 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Environment/Bench_1.prefab
+  artifactKey: Guid(c4cb4c9360b9f1e44815335dac31e745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Environment/Bench_1.prefab using Guid(c4cb4c9360b9f1e44815335dac31e745) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756ff9e192f22e8c8710b7717070d8c1') in 0.026530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Environment/Snowdrift_3.prefab
+  artifactKey: Guid(d67c95ed7d165114c87671fd578d2a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Environment/Snowdrift_3.prefab using Guid(d67c95ed7d165114c87671fd578d2a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '285e56017c522e0488fdbd214df69a71') in 0.100259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Environment/Garland_2.prefab
+  artifactKey: Guid(6771fce0fbf2c594c9e7b4c27dfd98fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Environment/Garland_2.prefab using Guid(6771fce0fbf2c594c9e7b4c27dfd98fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78e95fe1d630dc4bb57c7992caa60a49') in 0.014853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Free Voxel Christmas Pack/Prefabs/Environment/Street_Lamp.prefab
+  artifactKey: Guid(6c317703e2d71d44c92c332d67f2cf97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Voxel Christmas Pack/Prefabs/Environment/Street_Lamp.prefab using Guid(6c317703e2d71d44c92c332d67f2cf97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbdd4ecc983426df3d07af58e68af3b3') in 0.059115 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
