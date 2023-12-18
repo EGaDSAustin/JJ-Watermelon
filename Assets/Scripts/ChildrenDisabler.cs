@@ -13,7 +13,7 @@ public class ChildrenDisabler : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            bool disablechild = Random.Range(0, 4) < 3;
+            bool disablechild = Random.Range(0, 2) == 0;
             child.gameObject.SetActive(disablechild);
         }
     }
