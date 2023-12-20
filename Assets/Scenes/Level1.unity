@@ -5482,7 +5482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824074482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: 0.000000016746096, z: -0.0000000039532173, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: -0.000000016746089, z: 0.0000000039532155, w: 0.973249}
   m_LocalPosition: {x: 0, y: 2.05, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5771,7 +5771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1324248796}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5905,7 +5905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463274707}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975291, y: 0.000000016746096, z: -0.0000000039532173, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: -0.000000016746089, z: 0.0000000039532155, w: 0.973249}
   m_LocalPosition: {x: 0, y: 2.05, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6268,7 +6268,7 @@ GameObject:
   - component: {fileID: 1894405271}
   - component: {fileID: 1894405274}
   - component: {fileID: 1894405275}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6379,6 +6379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screwedMaxTime: 4
   screwedPrompt: {fileID: 532746236}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1 &2021020745
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class ButtonScript : MonoBehaviour
     
     public void NewGameButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(newGameLevel);
     }
 
